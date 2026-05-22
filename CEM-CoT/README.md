@@ -39,7 +39,7 @@ python test_CELLM.py --cbl_path */CBL.pt
 ```
 Please change the argument `--cbl_path` accordingly if using other settings.
 
-#### Generate explanations from CB-LLM
+#### Generate explanations from CE-LLM
 Visualize the neurons in CE-LLM_TC, run
 ```
 python CAS_neu_activ.py --cbl_path */cbl.pt
@@ -60,21 +60,21 @@ Install the packages:
 pip install -r requirements.txt
 ```
 ### Training
-#### Train CB-LLM (generation)
-To train the CB-LLM for text generation, run
+#### Train CE-LLM (generation)
+To train the CE-LLM for text generation, run
 ```
 python train_model.py
 ```
 This will train the CE-LLM (Lora finetune Llama3 with CBL) on SST2 dataset with the class labels as concepts (negative or positive), and store the model under `from_pretained_llama3_lora_cbm/SetFit_sst2/`.
 Set the argument `--dataset yelp_polarity`, `--dataset ag_news`, or `--dataset dbpedia_14` to switch the dataset.
 ### Testing
-#### Test the concept detection of CB-LLM (generation)
-To test the concept detection (concept accuracy) of the CB-LLM, run
+#### Test the concept detection of CE-LLM-CoT
+To test the concept detection (concept accuracy) of the CE-LLM, run
 ```
 python concepts_ev.py
 ```
 
-#### Test the steerability of CB-LLM-CoT
+#### Test the steerability of CE-LLM-CoT
 ```
 python train_labelClasses.py
 ```
@@ -85,7 +85,7 @@ python eva_steerability.py
 ```
 Please rename the desired checkpoint of the peft model and CBL as `llama3` and `cbl.pt`, as the script recognizes these file names.
 
-#### using the concept neurons and guide a sentence generation using CB-LLM-CoT
+#### using the concept neurons and guide a sentence generation using CE-LLM-CoT
 Run
 ```
 python test_generation.py
