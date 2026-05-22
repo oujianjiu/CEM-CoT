@@ -52,7 +52,7 @@ To test the accuracy of the baseline standard black-box model, run
 python test_pretrainLLM.py --model_path */backbone_finetuned_ag_news.pt
 ```
 
-## Part II: CB-LLM (generation)
+## Task 2: CE-LLM-CoT
 ### Setup
 Recommend using cuda12.1, python3.10, pytorch2.2.
 Install the packages:
